@@ -19,5 +19,5 @@ jobs:
           username: ${{ secrets.ACR_USERNAME }}
           password: ${{ secrets.ACR_PASSWORD }}
       - run: |
-          docker build . -t ${{ secrets.ACR_ENDPOINT }}/azure-spring-test
+          docker build . -t ${{ secrets.ACR_ENDPOINT }}/azure-spring-test:${{ github.sha }}
           docker push ${{ secrets.ACR_ENDPOINT }}/azure-spring-test:${{ github.sha }}
